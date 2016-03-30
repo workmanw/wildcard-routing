@@ -7,15 +7,10 @@ const Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('index', { path: '/' });
-  this.route('post', { path: '/post/:post_id', resetNamespace: true }, function() {
-    this.route('details', { path: '/details' });
-  });
 
-  this.route('community', { path: '/community/:communityId', resetNamespace: true }, function() {
-    this.route('room', { path: '/room/:roomId', resetNamespace: true }, function() {
-      this.route('wall', { path: '/wall/:wallId', resetNamespace: true }, function() {
-        this.route('wallitem', { path: '/wallitem/:wallitemId' });
-      });
+  this.route('room', { path: '/room/:roomId', resetNamespace: true }, function() {
+    this.route('wall', { path: '/wall/:wallId', resetNamespace: true }, function() {
+      this.route('item', { path: '/item/:itemId' });
     });
 
     this.route('resourceNotFound', { path: '/*glob' });
