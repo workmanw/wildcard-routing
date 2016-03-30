@@ -12,9 +12,9 @@ Router.map(function() {
     this.route('wall', { path: '/wall/:wallId', resetNamespace: true }, function() {
       this.route('item', { path: '/item/:itemId' });
     });
-
-    this.route('resourceNotFound', { path: '/*glob' });
   });
+
+  this.route('resourceNotFound', { path: '/*glob' });
 });
 
 export default Router;
